@@ -1,6 +1,7 @@
 body {
   font-family: "Quicksand", Arial, sans-serif;
-  color: #fff;
+  background: #23407a; /* deep blue */
+  color: #ffb3fa; /* white-pink */
   margin: 0;
   padding: 0;
   display: flex;
@@ -39,10 +40,49 @@ nav {
   display: flex;
   gap: 1.5em;
   margin-bottom: 2em;
-  background: #f7c75a; /* gold/yellow */
-  border-radius: 20px;
   padding: 0.7em 2em;
-  box-shadow: 0 2px 8px #0002;
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+}
+nav,
+nav a,
+h1,
+.header-art-title {
+  font-family: "Orbitron", "Quicksand", Arial, sans-serif !important;
+  font-weight: 200;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+nav a {
+  position: relative;
+  z-index: 1;
+}
+
+nav a.hover-img1::after,
+nav a.hover-img2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 70px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 2;
+}
+
+nav a.hover-img1::after {
+  background-image: url("underline1.png");
+  height: 40px;
+}
+nav a.hover-img2::after {
+  background-image: url("underline2.png");
+  height: 16px;
 }
 a {
   color: #23407a; /* deep blue */
@@ -70,10 +110,9 @@ a:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
+  background: #23407a;
   padding: 1.5em 2em;
   border-radius: 16px;
-  box-shadow: 0 2px 12px #0002;
   margin-bottom: 2em;
 }
 .email-form label {
@@ -89,7 +128,7 @@ a:focus {
   font-size: 1rem;
   width: 220px;
   background: #f7f7fa;
-  color: #23407a;
+  color: #ffb3fa;
   transition: border 0.2s, box-shadow 0.2s;
 }
 .email-form input[type="email"]:focus {
@@ -98,21 +137,21 @@ a:focus {
   outline: none;
 }
 .email-form button {
-  background: #f7c75a; /* gold/yellow */
-  color: #23407a;
+  background: #ffb3fa; /* neon white-pink */
   border: none;
   border-radius: 8px;
   padding: 0.7em 1.5em;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  color: #b1006e !important;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px #0002;
 }
 .email-form button:hover,
 .email-form button:focus {
   background: #ff7ee7; /* neon pink */
-  color: #fff;
+
   box-shadow: 0 0 8px #ff7ee7cc;
   outline: none;
 }
@@ -120,7 +159,25 @@ a:focus {
   display: block;
   max-width: 420px;
   width: 90vw;
-  margin: 48px auto 24px auto;
+  margin: 48px auto 48px auto;
+  box-shadow: 0 0 16px 4px #ffb3fa, 0 0 16px 4px #ffb3fa55;
+}
+
+/* Neon white-pink text effect for headings, nav, and main text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+nav a,
+.footer,
+label,
+p,
+.email-form label {
+  color: #ffb3fa !important;
+  text-shadow: 0 0 8px #ffb3fa, 0 0 16px #ffb3facc, 0 0 24px #fff5;
 }
 
 /* Responsive styles */

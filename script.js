@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Email form alert
   document
     .getElementById("emailForm")
     .addEventListener("submit", function (event) {
