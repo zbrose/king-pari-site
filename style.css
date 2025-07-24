@@ -137,14 +137,14 @@ a:focus {
   outline: none;
 }
 .email-form button {
-  background: #ffb3fa; /* neon white-pink */
+  background: #f7c75a; /* yellow */
   border: none;
   border-radius: 8px;
   padding: 0.7em 1.5em;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  color: #b1006e !important;
+  color: #23407a !important;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px #0002;
 }
