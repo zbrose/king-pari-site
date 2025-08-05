@@ -1,7 +1,7 @@
 body {
   font-family: "Quicksand", Arial, sans-serif;
   background: #23407a; /* deep blue */
-  color: #ffb3fa; /* white-pink */
+  color: #f7c75a;
   margin: 0;
   padding: 0;
   display: flex;
@@ -28,7 +28,6 @@ h1 {
   font-size: 3rem;
   letter-spacing: 2px;
   margin-bottom: 0.5em;
-  color: #f7c75a; /* gold/yellow */
   text-shadow: 2px 2px 0 #fff, 0 2px 12px #f7c75a55;
 }
 p {
@@ -49,74 +48,50 @@ nav,
 nav a,
 h1,
 .header-art-title {
-  font-family: "Orbitron", "Quicksand", Arial, sans-serif !important;
+  font-family: "Varela Round", "Quicksand", Arial, sans-serif !important;
   font-weight: 200;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
 nav a {
   position: relative;
   z-index: 1;
+  transition: filter 0.3s ease;
+  color: white;
 }
 
-nav a.hover-img1::after,
-nav a.hover-img2::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -10px;
-  width: 70px;
-  height: 40px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 2;
+nav a:hover {
+  /* filter: drop-shadow(0 0 4px #ffb3fa) drop-shadow(0 0 4px #ffb3fa)
+    drop-shadow(0 0 0px #ffb3fa55); */
+  animation: neonFlicker 0.5s infinite;
 }
 
-nav a.hover-img1::after {
-  background-image: url("underline1.png");
-  height: 40px;
-}
-nav a.hover-img2::after {
-  background-image: url("underline2.png");
-  height: 16px;
-}
 a {
   color: #23407a; /* deep blue */
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   transition: color 0.2s, background 0.2s, box-shadow 0.2s;
   padding: 0.2em 0.7em;
   border-radius: 8px;
 }
-a:hover,
-a:focus {
-  color: #fff;
-  background: #ff7ee7; /* neon pink */
-  box-shadow: 0 0 8px #ff7ee7cc;
-  outline: none;
-}
+
 .footer {
   margin-top: auto;
   padding: 2em 0 1em 0;
-  color: #f7c75a;
+  /* color: #f7c75a; */
   font-size: 0.9em;
 }
 .email-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #23407a;
   padding: 1.5em 2em;
   border-radius: 16px;
   margin-bottom: 2em;
 }
 .email-form label {
-  color: #23407a;
   margin-bottom: 0.5em;
   font-size: 1.1rem;
 }
@@ -128,13 +103,14 @@ a:focus {
   font-size: 1rem;
   width: 220px;
   background: #f7f7fa;
-  color: #ffb3fa;
+  color: black;
   transition: border 0.2s, box-shadow 0.2s;
 }
 .email-form input[type="email"]:focus {
   border: 2px solid #ff7ee7;
   box-shadow: 0 0 8px #ff7ee7cc;
   outline: none;
+  animation: neonFlicker 0.5s infinite;
 }
 .email-form button {
   background: #f7c75a; /* yellow */
@@ -144,40 +120,24 @@ a:focus {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  color: #23407a !important;
+  color: #23407a;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px #0002;
 }
 .email-form button:hover,
 .email-form button:focus {
   background: #ff7ee7; /* neon pink */
-
+  color: white;
   box-shadow: 0 0 8px #ff7ee7cc;
   outline: none;
+  animation: neonFlicker 0.5s infinite;
 }
 .header-art {
   display: block;
   max-width: 420px;
   width: 90vw;
-  margin: 48px auto 48px auto;
-  box-shadow: 0 0 16px 4px #ffb3fa, 0 0 16px 4px #ffb3fa55;
-}
-
-/* Neon white-pink text effect for headings, nav, and main text */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-nav,
-nav a,
-.footer,
-label,
-p,
-.email-form label {
-  color: #ffb3fa !important;
-  text-shadow: 0 0 8px #ffb3fa, 0 0 16px #ffb3facc, 0 0 24px #fff5;
+  transition: filter 0.3s ease, animation 0.3s ease;
+  animation: neonFlicker 0.5s infinite;
 }
 
 /* Responsive styles */
@@ -215,16 +175,46 @@ p,
     font-size: 1rem;
   }
   .email-form {
-    width: 100%;
     max-width: 350px;
     padding: 1em 0.5em;
   }
   .email-form input[type="email"] {
-    width: 100%;
     font-size: 0.95rem;
   }
   .footer {
     font-size: 0.8em;
     padding: 1em 0 0.5em 0;
+  }
+}
+
+@keyframes neonFlicker {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px #ffb3fa) drop-shadow(0 0 4px #ffb3fa)
+      drop-shadow(0 0 6px #ffb3fa);
+  }
+  15% {
+    filter: drop-shadow(0 0 1.8px #ffb3fa) drop-shadow(0 0 3.8px #ffb3fa)
+      drop-shadow(0 0 5.8px #ffb3fa);
+  }
+  30% {
+    filter: drop-shadow(0 0 2.2px #ffb3fa) drop-shadow(0 0 4.2px #ffb3fa)
+      drop-shadow(0 0 6.2px #ffb3fa);
+  }
+  45% {
+    filter: drop-shadow(0 0 1.8px #ffb3fa) drop-shadow(0 0 3.8px #ffb3fa)
+      drop-shadow(0 0 5.8px #ffb3fa);
+  }
+  60% {
+    filter: drop-shadow(0 0 2px #ffb3fa) drop-shadow(0 0 4px #ffb3fa)
+      drop-shadow(0 0 6px #ffb3fa);
+  }
+  75% {
+    filter: drop-shadow(0 0 1.8px #ffb3fa) drop-shadow(0 0 3.8px #ffb3fa)
+      drop-shadow(0 0 5.8px #ffb3fa);
+  }
+  90% {
+    filter: drop-shadow(0 0 2.2px #ffb3fa) drop-shadow(0 0 4.2px #ffb3fa)
+      drop-shadow(0 0 6.2px #ffb3fa);
   }
 }
