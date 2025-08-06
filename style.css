@@ -61,10 +61,14 @@ nav a {
   color: white;
 }
 
-nav a:hover {
-  /* filter: drop-shadow(0 0 4px #ffb3fa) drop-shadow(0 0 4px #ffb3fa)
-    drop-shadow(0 0 0px #ffb3fa55); */
+nav a:hover,
+nav a:focus {
   animation: neonFlicker 0.5s infinite;
+}
+
+nav a:focus-visible {
+  outline: 2px solid #ffb3fa;
+  outline-offset: 2px;
 }
 
 a {
@@ -138,6 +142,57 @@ a {
   width: 90vw;
   transition: filter 0.3s ease, animation 0.3s ease;
   animation: neonFlicker 0.5s infinite;
+}
+
+.thank-you-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  border-radius: 16px;
+  margin-bottom: 2em;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.thank-you-message h2 {
+  color: #f7c75a;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+  font-family: "Varela Round", "Quicksand", Arial, sans-serif;
+}
+
+.thank-you-message p {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles for thank you message */
+@media (max-width: 600px) {
+  .thank-you-message {
+    padding: 1.5em 1em;
+  }
+
+  .thank-you-message h2 {
+    font-size: 1.4rem;
+  }
+
+  .thank-you-message p {
+    font-size: 1rem;
+  }
 }
 
 /* Responsive styles */
